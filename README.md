@@ -46,4 +46,4 @@ Use these settings when adding a monitor:</b>
 <p><img width="494" align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=BookMySchool&show_icons=true&locale=en&layout=compact" alt="DAXXTEAM" /></p>
 
   ## Contact :
-<a href="https://t.me/ChVivekBro"><img title="Telegram" src="https://img.shields.io/badge/Telegram-%23000000.svg?&style=for-the-badge&logo=telegram&logoColor=61DAFB"></a>
+<a href="https://t.me/official_virendraverma"><img title="Telegram" src="https://img.shields.io/badge/Telegram-%23000000.svg?&style=for-the-badge&logo=telegram&logoColor=61DAFB"></a>
