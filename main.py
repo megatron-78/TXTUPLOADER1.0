@@ -176,13 +176,13 @@ async def account_login(bot: Client, m: Message):
                 ytf = f"b[height<={raw_text2}]/bv[height<={raw_text2}]+ba/b/bv+ba"
 
             if "jw-prod" in url:
-                cmd = f'yt-dlp -o "{name}𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.mp4" "{url}"'
+                cmd = f'yt-dlp -o "{name}" "{url}"'
             else:
-                cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.mp4"'
+                cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}"'
 
             try:
-                cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Video Title :** {name1}𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.mp4\n\n**Batch Name :** {b_name}\n\n**Downloaded By ➤** {CR}'
-                cc1 = f'[ 📕 ] **Pdf ID : **{str(count).zfill(3)}\n**File Title :** {name1}𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.pdf\n\n**Batch Name :**{b_name}\n\n**Downloaded By ➤** {CR}'
+                cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Video Title :** {name1}**𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.mp4\n\n**Batch Name :** {b_name}\n\n**Downloaded By ➤** {CR}'
+                cc1 = f'[ 📕 ] **Pdf ID : **{str(count).zfill(3)}\n**File Title :** {name1}**𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.pdf\n\n**Batch Name :**{b_name}\n\n**Downloaded By ➤** {CR}'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -197,13 +197,13 @@ async def account_login(bot: Client, m: Message):
                         continue
                 elif ".pdf" in url:
                     try:
-                        cmd = f'yt-dlp -o "{name}𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.pdf" "{url}"'
+                        cmd = f'yt-dlp -o "{name}" "{url}"'
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
-                        copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.pdf', caption=cc1)
+                        copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
                         await copy.copy(chat_id = -1002015954185)
                         count += 1
-                        os.remove(f'{name}𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.pdf')
+                        os.remove(f'{name}.pdf')
                     except FloodWait as e:
                         await m.reply_text(str(e))
                         time.sleep(e.x)
@@ -267,7 +267,7 @@ async def vision_pdf(bot: Client, m: Message):
             url = links[i][1]
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/","").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").strip()[:57]
             name = f'{str(count).zfill(3)}) {name1}'
-            cc = f'{str(count).zfill(3)}. {name1}𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.pdf\n\n**Batch:-** {raw_texty}\n\n**Extracted By ➤** 𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™ '
+            cc = f'{str(count).zfill(3)}. {name1}.pdf\n\n**Batch:-** {raw_texty}\n\n**Extracted By ➤** 𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™ '
             ka = await helper.vision(url, name, cookies)
             await m.reply_document(ka, caption=cc)
             count += 1
