@@ -168,7 +168,7 @@ async def account_login(bot: Client, m: Message):
                   url = response.json()['url']
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
-            name = f'{str(count).zfill(3)}) {name1[:60]}'
+            name = f'{str(count).zfill(3)}) @official_virendraverma {name1[:60]}'
 
             if "youtu" in url:
                 ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]"
@@ -181,8 +181,8 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}"'
 
             try:
-                cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Video Title :** {name1}**𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.mp4\n\n**Batch Name :** {b_name}\n\n**Downloaded By ➤** {CR}'
-                cc1 = f'[ 📕 ] **Pdf ID : **{str(count).zfill(3)}\n**File Title :** {name1}**𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™.pdf\n\n**Batch Name :**{b_name}\n\n**Downloaded By ➤** {CR}'
+                cc = f'[ 🎬 ] **Vid ID : **{str(count).zfill(3)}\n**Video Title :** {name1}@official_virendraverma.mp4\n\n**Batch Name :** {b_name}\n\n**Downloaded By ➤** {CR}'
+                cc1 = f'[ 📕 ] **Pdf ID : **{str(count).zfill(3)}\n**File Title :** {name1}@official_virendraverma.pdf\n\n**Batch Name :**{b_name}\n\n**Downloaded By ➤** {CR}'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
