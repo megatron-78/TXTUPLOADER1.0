@@ -22,6 +22,7 @@ import sys
 import re
 import os
 import uvloop
+from subprocess import getstatusoutput
 
 bot = Client("bot",
              bot_token= "6911744817:AAFH-5aOTr9hrR-VYmHFKK4w_1nXsbQ-vqw",
