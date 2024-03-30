@@ -17,11 +17,11 @@ from logger import logging
 import time
 import asyncio
 from pyrogram.types import User, Message
-from config import *
+
 import sys
 import re
 import os
-import uvloop
+
 from subprocess import getstatusoutput
 
 bot = Client("bot",
