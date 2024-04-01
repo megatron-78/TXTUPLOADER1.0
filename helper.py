@@ -115,7 +115,6 @@ async def send_vid(bot: Client, m: Message, cc, filename, thumb, name,):
         shell=True)
        # await prog.delete(True)
     reply = await m.reply_text(f"**Uploading ...** - `{name}`")
-        await reply.delete(True)
     try:
         if thumb == "no":
             thumbnail = f"{filename}.jpg"
