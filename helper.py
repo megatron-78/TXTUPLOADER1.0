@@ -120,14 +120,14 @@ async def send_vid(bot: Client, m: Message, cc, filename, thumb, name,):
             thumbnail = f"{filename}.jpg"
         else:
             thumbnail = thumb
-        await reply.delete(true)
+        
     except Exception as e:
         await m.reply_text(str(e))
 
     dur = int(duration(filename))
 
     start_time = time.time()
-
+        await reply.delete(True)
     try:
         await m.reply_video(filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail,duration=dur, progress=progress_bar,progress_args=(reply,start_time))
     except Exception:
