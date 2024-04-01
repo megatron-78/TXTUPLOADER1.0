@@ -111,7 +111,7 @@ async def download_video(url, cmd, name):
 async def send_vid(bot: Client, m: Message, cc, filename, thumb, name,):
 
     subprocess.run(
-        f'ffmpeg -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"',
+        f'ffmpeg -i "{filename}" -ss 00:00:12 -vframes 1 "{filename}.jpg"',
         shell=True)
     #await prog.delete(True)
     reply = await m.reply_text(f"**Uploading ...** - `{name}`")
@@ -144,5 +144,5 @@ async def send_vid(bot: Client, m: Message, cc, filename, thumb, name,):
     os.remove(filename)
 
     os.remove(f"{filename}.jpg")
-        await reply.delete()
+      #  await reply.delete()
     
