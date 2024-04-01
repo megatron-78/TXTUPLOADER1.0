@@ -114,7 +114,7 @@ async def send_vid(bot: Client, m: Message, cc, filename, thumb, name,):
         f'ffmpeg -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"',
         shell=True)
     #await prog.delete(True)
-    reply = await m.reply_text(f"**Uploading ...** - `{name}`")
+    reply = await bot.send_message(f"**Uploading ...** - `{name}`")
     try:
         if thumb == "no":
             thumbnail = f"{filename}.jpg"
@@ -127,7 +127,6 @@ async def send_vid(bot: Client, m: Message, cc, filename, thumb, name,):
     dur = int(duration(filename))
 
     start_time = time.time()
-        await reply.delete(True)
     try:
         await m.reply_video(filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail,duration=dur, progress=progress_bar,progress_args=(reply,start_time))
     except Exception:
@@ -145,5 +144,5 @@ async def send_vid(bot: Client, m: Message, cc, filename, thumb, name,):
     os.remove(filename)
 
     os.remove(f"{filename}.jpg")
-   # await prog.delete(True)
+        await reply.delete(True)
     
