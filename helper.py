@@ -128,6 +128,8 @@ async def send_vid(bot: Client, m: Message, cc, filename, thumb, name):
     start_time = time.time()
 
     try:
+        await m.reply_video(filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail,duration=dur, progress=progress_bar,progress_args=(reply,start_time))
+    except Exception:
         copy = await bot.send_video(chat_id=m.chat.id,video=filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail,duration=dur) #, progress=progress_bar,progress_args=(reply,start_time))
         await copy.copy(chat_id = LOG) 
     except TimeoutError:
