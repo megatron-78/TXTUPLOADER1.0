@@ -108,18 +108,19 @@ async def download_video(url, cmd, name):
 
 
 
-async def send_vid(bot: Client, m: Message, cc, filename, thumb, name,):
+async def send_vid(bot: Client, m: Message, cc, filename, thumb, name, prog):
 
     subprocess.run(
         f'ffmpeg -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"',
         shell=True)
-       # await Message.delete(True)
+    #await prog.delete(True)
     reply = await m.reply_text(f"**Uploading ...** - `{name}`")
     try:
         if thumb == "no":
             thumbnail = f"{filename}.jpg"
         else:
             thumbnail = thumb
+        await reply_text.delete(true)
     except Exception as e:
         await m.reply_text(str(e))
 
@@ -128,6 +129,8 @@ async def send_vid(bot: Client, m: Message, cc, filename, thumb, name,):
     start_time = time.time()
 
     try:
+        await m.reply_video(filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail,duration=dur, progress=progress_bar,progress_args=(reply,start_time))
+    except Exception:
         copy = await bot.send_video(chat_id=m.chat.id,video=filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail,duration=dur) #, progress=progress_bar,progress_args=(reply,start_time))
         await copy.copy(chat_id = LOG) 
     except TimeoutError:
