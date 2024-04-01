@@ -210,12 +210,13 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    prog = await m.reply_text(f"**Downloading:-**\n\n**Title ➤** `{name}`\n**Quality ➤** `{raw_text2}`\n\n**Bot By ➤ **𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™")
-                    res_file = await helper.download_video(url, cmd, name)
-                    filename = res_file
-                    await prog.delete(True)
-                    await helper.send_vid(bot, m, cc, filename, thumb, name)
-                    count += 1
+                     Show = f"**Downloading:-**\n\n**Title ➤** `{name}`\n**Quality ➤** `{raw_text2}`\n\n**Bot By ➤ **𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™"
+                     prog = await bot.send_message(m.chat.id, Show)
+                     res_file = await helper.download_video(url, cmd, name)
+                     filename = res_file
+                     await prog.delete(True)
+                     await helper.send_vid(bot, m, cc, filename, thumb, name, prog)
+                     count += 1
 
             except Exception as e:
                 await m.reply_text(f"**This #Failed File is not Counted**\n**Name ➤** `{name}`\n**Link ➤** `{url}`\n\n ** Failed Reason ➤** {e}")
