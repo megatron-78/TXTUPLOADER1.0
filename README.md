@@ -42,7 +42,7 @@ Use these settings when adding a monitor:</b>
 
 ## Deploy To Heroku
 
-<a href="https://heroku.com/deploy?template=https://github.com/Virendraverma9950/Txtuploader/self">
+<a href="https://heroku.com/deploy?template=https://github.com/Raj933955/TXTUPLOADER1.0/tree/main">
      <img height="30px" src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku">
   </a>
 
