@@ -1,7 +1,7 @@
 
 {
 
-    "name": "𝙑𝙄𝙍𝙀𝙉𝘿𝙍𝘼 𝙑𝙀𝙍𝙈𝘼™",
+    "name": "𝐌𝐞𝐧𝐝𝐚𝐱™❤️",
 
     "description": "A Modular telegram bot.",
 
@@ -32,21 +32,21 @@
         "BOT_TOKEN": {
 
             "description": "Your Bot token from @Botfather",
-            "value": "6911744817:AAFH-5aOTr9hrR-VYmHFKK4w_1nXsbQ-vqw"
+            "value": "6939155705:AAGrrUjiqHkj9PP9XaFBS0exzHKOrWrdlwE"
 
         },
 
         "API_ID": {
 
             "description": "Your API_ID from https://my.telegram.org/apps",
-            "value": "25919081"
+            "value": "24147139"
 
         },
 
         "API_HASH": {
 
             "description": "Your API_HASH from https://my.telegram.org/apps",
-            "value": "0bc2fdba14b16b44f0d89729ed8d2118"
+            "value": "17f525f59de52108805a65f5ffd909e4"
 
         }
 
